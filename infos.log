@@ -1,0 +1,532 @@
++++++++++++++++++++++++++++++++++++++++++
+++++ New Execution of RoboVisionTest ++++
++++++++++++++++++++++++++++++++++++++++++
+
+============================================================
+[22:10:56] Script executions: 1
+----------------------------------------
+[22:10:56] Ball: direction=left/forwards | move=True   
+[22:10:56] Ballinfo u: u= 1109   | u_add= 109    | u_old= 1000  
+[22:10:56] Ballinfo v: v=-164    | v_add=-165    | v_old= 1     
+[22:10:56] Ballinfos: angle=-8.41198924353 | rating=9.36721943554
+----------------------------------------
+[22:10:56] Global noise: 0.992 ( ~99% of real values )
+[22:10:56] Ballinfo noisy u:  1168   | u_diff= 59     | 105% from real u
+[22:10:56] Ballinfo noisy v: -177    | v_diff=-13     | 108% from real v
+[22:10:56] Ballinfo noisy angle: -8      | angle_diff= 0      | 102% from real angle
+----------------------------------------
+[22:10:56] Filtered Ball u: 1168.335936
+[22:10:56] Filtered Ball v: -177.817984
+[22:10:56] Filtered Ball angle: -135.0
+============================================================
+[22:10:57] Script executions: 2
+----------------------------------------
+[22:10:57] Ball: direction=left/forwards | move=True   
+[22:10:57] Ballinfo u: u= 1255   | u_add= 146    | u_old= 1109  
+[22:10:57] Ballinfo v: v=-279    | v_add=-115    | v_old=-164   
+[22:10:57] Ballinfos: angle=-12.5336415723 | rating=11.1816896582
+----------------------------------------
+[22:10:57] Global noise: 1.098 ( ~109% of real values )
+[22:10:57] Ballinfo noisy u:  1209   | u_diff=-45     | 96% from real u
+[22:10:57] Ballinfo noisy v: -265    | v_diff= 13     | 95% from real v
+[22:10:57] Ballinfo noisy angle: -12     | angle_diff= 0      | 98% from real angle
+----------------------------------------
+[22:10:57] Filtered Ball u: 1189.105578
+[22:10:57] Filtered Ball v: -221.555078
+[22:10:57] Filtered Ball angle: -135.0
+============================================================
+[22:10:58] Script executions: 3
+----------------------------------------
+[22:10:58] Ball: direction=left/forwards | move=True   
+[22:10:58] Ballinfo u: u= 1418   | u_add= 163    | u_old= 1255  
+[22:10:58] Ballinfo v: v=-405    | v_add=-126    | v_old=-279   
+[22:10:58] Ballinfos: angle=-15.9400591107 | rating=9.47042051494
+----------------------------------------
+[22:10:58] Global noise: 0.678 ( ~67% of real values )
+[22:10:58] Ballinfo noisy u:  945    | u_diff=-472    | 66% from real u
+[22:10:58] Ballinfo noisy v: -277    | v_diff= 127    | 68% from real v
+[22:10:58] Ballinfo noisy angle: -16     | angle_diff= 0      | 102% from real angle
+----------------------------------------
+[22:10:58] Filtered Ball u: 1107.757096
+[22:10:58] Filtered Ball v: -240.057155333
+[22:10:58] Filtered Ball angle: -135.0
+============================================================
+[22:10:59] Script executions: 4
+----------------------------------------
+[22:10:59] Ball: direction=left/forwards | move=True   
+[22:10:59] Ballinfo u: u= 1431   | u_add= 13     | u_old= 1418  
+[22:10:59] Ballinfo v: v=-567    | v_add=-162    | v_old=-405   
+[22:10:59] Ballinfos: angle=-21.6147789428 | rating=15.8031795462
+----------------------------------------
+[22:10:59] Global noise: 0.675 ( ~67% of real values )
+[22:10:59] Ballinfo noisy u:  1062   | u_diff=-368    | 74% from real u
+[22:10:59] Ballinfo noisy v: -399    | v_diff= 167    | 70% from real v
+[22:10:59] Ballinfo noisy angle: -20     | angle_diff= 0      | 95% from real angle
+----------------------------------------
+[22:10:59] Filtered Ball u: 1096.447197
+[22:10:59] Filtered Ball v: -280.02977275
+[22:10:59] Filtered Ball angle: -135.0
+============================================================
+[22:11:00] Script executions: 5
+----------------------------------------
+[22:11:00] Ball: direction=right/forwards | move=True   
+[22:11:00] Ballinfo u: u= 1452   | u_add= 21     | u_old= 1431  
+[22:11:00] Ballinfo v: v=-489    | v_add= 78     | v_old=-567   
+[22:11:00] Ballinfos: angle=-18.6123345705 | rating=21.9814849672
+----------------------------------------
+[22:11:00] Global noise: 0.974 ( ~97% of real values )
+[22:11:00] Ballinfo noisy u:  1576   | u_diff= 124    | 108% from real u
+[22:11:00] Ballinfo noisy v: -461    | v_diff= 27     | 94% from real v
+[22:11:00] Ballinfo noisy angle: -16     | angle_diff= 2      | 87% from real angle
+----------------------------------------
+[22:11:00] Filtered Ball u: 1192.5350616
+[22:11:00] Filtered Ball v: -316.2327878
+[22:11:00] Filtered Ball angle: -135.0
+============================================================
+[22:11:01] Script executions: 6
+----------------------------------------
+[22:11:01] Ball: direction=right/forwards | move=True   
+[22:11:01] Ballinfo u: u= 1498   | u_add= 46     | u_old= 1452  
+[22:11:01] Ballinfo v: v=-293    | v_add= 196    | v_old=-489   
+[22:11:01] Ballinfos: angle=-11.0669992357 | rating=11.5092779117
+----------------------------------------
+[22:11:01] Global noise: 0.698 ( ~69% of real values )
+[22:11:01] Ballinfo noisy u:  908    | u_diff=-589    | 60% from real u
+[22:11:01] Ballinfo noisy v: -207    | v_diff= 85     | 70% from real v
+[22:11:01] Ballinfo noisy angle: -12     | angle_diff=-1      | 116% from real angle
+----------------------------------------
+[22:11:01] Filtered Ball u: 1140.5938496
+[22:11:01] Filtered Ball v: -322.185533
+[22:11:01] Filtered Ball angle: -135.0
+============================================================
+[22:11:02] Script executions: 7
+----------------------------------------
+[22:11:02] Ball: direction=right/forwards | move=True   
+[22:11:02] Ballinfo u: u= 1594   | u_add= 96     | u_old= 1498  
+[22:11:02] Ballinfo v: v=-184    | v_add= 109    | v_old=-293   
+[22:11:02] Ballinfos: angle=-6.5846732855 | rating=6.60109912271
+----------------------------------------
+[22:11:02] Global noise: 1.268 ( ~126% of real values )
+[22:11:02] Ballinfo noisy u:  2144   | u_diff= 550    | 134% from real u
+[22:11:02] Ballinfo noisy v: -259    | v_diff=-75     | 141% from real v
+[22:11:02] Ballinfo noisy angle: -6      | angle_diff= 0      | 104% from real angle
+----------------------------------------
+[22:11:02] Filtered Ball u: 1327.515748
+[22:11:02] Filtered Ball v: -321.0623498
+[22:11:02] Filtered Ball angle: -135.0
+============================================================
+[22:11:03] Script executions: 8
+----------------------------------------
+[22:11:03] Ball: direction=right/forwards | move=True   
+[22:11:03] Ballinfo u: u= 1673   | u_add= 79     | u_old= 1594  
+[22:11:03] Ballinfo v: v=-111    | v_add= 73     | v_old=-184   
+[22:11:03] Ballinfos: angle=-3.79589002826 | rating=0.717213116832
+----------------------------------------
+[22:11:03] Global noise: 1.272 ( ~127% of real values )
+[22:11:03] Ballinfo noisy u:  1838   | u_diff= 165    | 109% from real u
+[22:11:03] Ballinfo noisy v: -148    | v_diff=-37     | 134% from real v
+[22:11:03] Ballinfo noisy angle: -4      | angle_diff= 0      | 121% from real angle
+----------------------------------------
+[22:11:03] Filtered Ball u: 1506.2317984
+[22:11:03] Filtered Ball v: -295.4133614
+[22:11:03] Filtered Ball angle: -135.0
+============================================================
+[22:11:04] Script executions: 9
+----------------------------------------
+[22:11:04] Ball: direction=right/forwards | move=True   
+[22:11:04] Ballinfo u: u= 1791   | u_add= 118    | u_old= 1673  
+[22:11:04] Ballinfo v: v= 24     | v_add= 135    | v_old=-111   
+[22:11:04] Ballinfos: angle=0.767736688344 | rating=2.36769294327
+----------------------------------------
+[22:11:04] Global noise: 1.077 ( ~107% of real values )
+[22:11:04] Ballinfo noisy u:  1718   | u_diff=-72     | 95% from real u
+[22:11:04] Ballinfo noisy v:  22     | v_diff=-1      | 94% from real v
+[22:11:04] Ballinfo noisy angle:  0      | angle_diff= 0      | 98% from real angle
+----------------------------------------
+[22:11:04] Filtered Ball u: 1637.4595258
+[22:11:04] Filtered Ball v: -210.9004364
+[22:11:04] Filtered Ball angle: -135.0
+============================================================
+[22:11:05] Script executions: 10
+----------------------------------------
+[22:11:05] Ball: direction=right/forwards | move=True   
+[22:11:05] Ballinfo u: u= 1942   | u_add= 151    | u_old= 1791  
+[22:11:05] Ballinfo v: v= 160    | v_add= 136    | v_old= 24    
+[22:11:05] Ballinfos: angle=4.70992080853 | rating=15.4622782456
+----------------------------------------
+[22:11:05] Global noise: 0.658 ( ~65% of real values )
+[22:11:05] Ballinfo noisy u:  1125   | u_diff=-816    | 57% from real u
+[22:11:05] Ballinfo noisy v:  103    | v_diff=-56     | 64% from real v
+[22:11:05] Ballinfo noisy angle:  5      | angle_diff= 0      | 111% from real angle
+----------------------------------------
+[22:11:05] Filtered Ball u: 1547.236925
+[22:11:05] Filtered Ball v: -97.9091948
+[22:11:05] Filtered Ball angle: -135.0
+============================================================
+[22:11:06] Script executions: 11
+----------------------------------------
+[22:11:06] Ball: direction=right/forwards | move=True   
+[22:11:06] Ballinfo u: u= 2079   | u_add= 137    | u_old= 1942  
+[22:11:06] Ballinfo v: v= 192    | v_add= 32     | v_old= 160   
+[22:11:06] Ballinfos: angle=5.27641838926 | rating=2.33011084077
+----------------------------------------
+[22:11:06] Global noise: 1.254 ( ~125% of real values )
+[22:11:06] Ballinfo noisy u:  2385   | u_diff= 306    | 114% from real u
+[22:11:06] Ballinfo noisy v:  208    | v_diff= 16     | 108% from real v
+[22:11:06] Ballinfo noisy angle:  4      | angle_diff= 0      | 94% from real angle
+----------------------------------------
+[22:11:06] Filtered Ball u: 1842.6040278
+[22:11:06] Filtered Ball v: -14.7399888
+[22:11:06] Filtered Ball angle: -135.0
+============================================================
+[22:11:07] Script executions: 12
+----------------------------------------
+[22:11:07] Ball: direction=left/forwards | move=True   
+[22:11:07] Ballinfo u: u= 2259   | u_add= 180    | u_old= 2079  
+[22:11:07] Ballinfo v: v= 11     | v_add=-181    | v_old= 192   
+[22:11:07] Ballinfos: angle=0.278994507909 | rating=2.56546484002
+----------------------------------------
+[22:11:07] Global noise: 0.786 ( ~78% of real values )
+[22:11:07] Ballinfo noisy u:  1729   | u_diff=-529    | 76% from real u
+[22:11:07] Ballinfo noisy v:  9      | v_diff=-1      | 87% from real v
+[22:11:07] Ballinfo noisy angle:  0      | angle_diff= 0      | 114% from real angle
+----------------------------------------
+[22:11:07] Filtered Ball u: 1759.5889006
+[22:11:07] Filtered Ball v: 39.1233204
+[22:11:07] Filtered Ball angle: 45.0
+============================================================
+[22:11:08] Script executions: 13
+----------------------------------------
+[22:11:08] Ball: direction=left/forwards | move=True   
+[22:11:08] Ballinfo u: u= 2438   | u_add= 179    | u_old= 2259  
+[22:11:08] Ballinfo v: v=-133    | v_add=-144    | v_old= 11    
+[22:11:08] Ballinfos: angle=-3.12255648788 | rating=0.107129658206
+----------------------------------------
+[22:11:08] Global noise: 0.838 ( ~83% of real values )
+[22:11:08] Ballinfo noisy u:  1832   | u_diff=-605    | 75% from real u
+[22:11:08] Ballinfo noisy v: -119    | v_diff= 13     | 89% from real v
+[22:11:08] Ballinfo noisy angle: -3      | angle_diff= 0      | 119% from real angle
+----------------------------------------
+[22:11:08] Filtered Ball u: 1758.3829174
+[22:11:08] Filtered Ball v: 44.9908564
+[22:11:08] Filtered Ball angle: 45.0
+============================================================
+[22:11:09] Script executions: 14
+----------------------------------------
+[22:11:09] Ball: direction=left/forwards | move=True   
+[22:11:09] Ballinfo u: u= 2575   | u_add= 137    | u_old= 2438  
+[22:11:09] Ballinfo v: v=-195    | v_add=-62     | v_old=-133   
+[22:11:09] Ballinfos: angle=-4.33063793289 | rating=22.1109035754
+----------------------------------------
+[22:11:09] Global noise: 1.293 ( ~129% of real values )
+[22:11:09] Ballinfo noisy u:  3056   | u_diff= 481    | 118% from real u
+[22:11:09] Ballinfo noisy v: -223    | v_diff=-28     | 114% from real v
+[22:11:09] Ballinfo noisy angle: -4      | angle_diff= 0      | 96% from real angle
+----------------------------------------
+[22:11:09] Filtered Ball u: 2025.9433
+[22:11:09] Filtered Ball v: -4.1604386
+[22:11:09] Filtered Ball angle: -135.0
+============================================================
+[22:11:10] Script executions: 15
+----------------------------------------
+[22:11:10] Ball: direction=left/forwards | move=True   
+[22:11:10] Ballinfo u: u= 2735   | u_add= 160    | u_old= 2575  
+[22:11:10] Ballinfo v: v=-356    | v_add=-161    | v_old=-195   
+[22:11:10] Ballinfos: angle=-7.41618235679 | rating=25.2162740618
+----------------------------------------
+[22:11:10] Global noise: 1.183 ( ~118% of real values )
+[22:11:10] Ballinfo noisy u:  3080   | u_diff= 345    | 112% from real u
+[22:11:10] Ballinfo noisy v: -394    | v_diff=-38     | 110% from real v
+[22:11:10] Ballinfo noisy angle: -7      | angle_diff= 0      | 98% from real angle
+----------------------------------------
+[22:11:10] Filtered Ball u: 2416.8287488
+[22:11:10] Filtered Ball v: -103.7816162
+[22:11:10] Filtered Ball angle: -135.0
+============================================================
+[22:11:11] Script executions: 16
+----------------------------------------
+[22:11:11] Ball: direction=left/forwards | move=True   
+[22:11:11] Ballinfo u: u= 2748   | u_add= 13     | u_old= 2735  
+[22:11:11] Ballinfo v: v=-472    | v_add=-116    | v_old=-356   
+[22:11:11] Ballinfos: angle=-9.74609615412 | rating=9.8716966242
+----------------------------------------
+[22:11:11] Global noise: 1.181 ( ~118% of real values )
+[22:11:11] Ballinfo noisy u:  2794   | u_diff= 46     | 101% from real u
+[22:11:11] Ballinfo noisy v: -612    | v_diff=-140    | 129% from real v
+[22:11:11] Ballinfo noisy angle: -12     | angle_diff=-2      | 126% from real angle
+----------------------------------------
+[22:11:11] Filtered Ball u: 2498.5914844
+[22:11:11] Filtered Ball v: -267.8465474
+[22:11:11] Filtered Ball angle: -135.0
+============================================================
+[22:11:12] Script executions: 17
+----------------------------------------
+[22:11:12] Ball: direction=left/forwards | move=True   
+[22:11:12] Ballinfo u: u= 2788   | u_add= 40     | u_old= 2748  
+[22:11:12] Ballinfo v: v=-600    | v_add=-128    | v_old=-472   
+[22:11:12] Ballinfos: angle=-12.1452725435 | rating=13.3958881307
+----------------------------------------
+[22:11:12] Global noise: 0.789 ( ~78% of real values )
+[22:11:12] Ballinfo noisy u:  2285   | u_diff=-502    | 81% from real u
+[22:11:12] Ballinfo noisy v: -416    | v_diff= 183    | 69% from real v
+[22:11:12] Ballinfo noisy angle: -10     | angle_diff= 1      | 84% from real angle
+----------------------------------------
+[22:11:12] Filtered Ball u: 2609.8139788
+[22:11:12] Filtered Ball v: -352.9983254
+[22:11:12] Filtered Ball angle: -135.0
+============================================================
+[22:11:13] Script executions: 18
+----------------------------------------
+[22:11:13] Ball: direction=left/forwards | move=True   
+[22:11:13] Ballinfo u: u= 2909   | u_add= 121    | u_old= 2788  
+[22:11:13] Ballinfo v: v=-797    | v_add=-197    | v_old=-600   
+[22:11:13] Ballinfos: angle=-15.3217610452 | rating=20.2990670813
+----------------------------------------
+[22:11:13] Global noise: 0.87 ( ~87% of real values )
+[22:11:13] Ballinfo noisy u:  2234   | u_diff=-674    | 76% from real u
+[22:11:13] Ballinfo noisy v: -660    | v_diff= 136    | 82% from real v
+[22:11:13] Ballinfo noisy angle: -16     | angle_diff=-1      | 107% from real angle
+----------------------------------------
+[22:11:13] Filtered Ball u: 2690.2364632
+[22:11:13] Filtered Ball v: -461.2627218
+[22:11:13] Filtered Ball angle: -135.0
+============================================================
+[22:11:14] Script executions: 19
+----------------------------------------
+[22:11:14] Ball: direction=right/forwards | move=True   
+[22:11:14] Ballinfo u: u= 2969   | u_add= 60     | u_old= 2909  
+[22:11:14] Ballinfo v: v=-706    | v_add= 91     | v_old=-797   
+[22:11:14] Ballinfos: angle=-13.3759732197 | rating=12.4854366818
+----------------------------------------
+[22:11:14] Global noise: 1.292 ( ~129% of real values )
+[22:11:14] Ballinfo noisy u:  4361   | u_diff= 1392   | 146% from real u
+[22:11:14] Ballinfo noisy v: -1002   | v_diff=-296    | 141% from real v
+[22:11:14] Ballinfo noisy angle: -12     | angle_diff= 0      | 96% from real angle
+----------------------------------------
+[22:11:14] Filtered Ball u: 2951.2394284
+[22:11:14] Filtered Ball v: -617.1258364
+[22:11:14] Filtered Ball angle: -135.0
+============================================================
+[22:11:15] Script executions: 20
+----------------------------------------
+[22:11:15] Ball: direction=right/forwards | move=True   
+[22:11:15] Ballinfo u: u= 3078   | u_add= 109    | u_old= 2969  
+[22:11:15] Ballinfo v: v=-628    | v_add= 78     | v_old=-706   
+[22:11:15] Ballinfos: angle=-11.531703019 | rating=12.3736347029
+----------------------------------------
+[22:11:15] Global noise: 1.034 ( ~103% of real values )
+[22:11:15] Ballinfo noisy u:  2829   | u_diff=-248    | 91% from real u
+[22:11:15] Ballinfo noisy v: -573    | v_diff= 54     | 91% from real v
+[22:11:15] Ballinfo noisy angle: -11     | angle_diff= 0      | 99% from real angle
+----------------------------------------
+[22:11:15] Filtered Ball u: 2901.074802
+[22:11:15] Filtered Ball v: -652.962494
+[22:11:15] Filtered Ball angle: -135.0
+============================================================
+[22:11:16] Script executions: 21
+----------------------------------------
+[22:11:16] Ball: direction=right/forwards | move=True   
+[22:11:16] Ballinfo u: u= 3106   | u_add= 28     | u_old= 3078  
+[22:11:16] Ballinfo v: v=-509    | v_add= 119    | v_old=-628   
+[22:11:16] Ballinfos: angle=-9.30670072941 | rating=23.3876073854
+----------------------------------------
+[22:11:16] Global noise: 1.118 ( ~111% of real values )
+[22:11:16] Ballinfo noisy u:  3903   | u_diff= 797    | 125% from real u
+[22:11:16] Ballinfo noisy v: -498    | v_diff= 10     | 97% from real v
+[22:11:16] Ballinfo noisy angle: -7      | angle_diff= 2      | 78% from real angle
+----------------------------------------
+[22:11:16] Filtered Ball u: 3122.8387868
+[22:11:16] Filtered Ball v: -630.2500892
+[22:11:16] Filtered Ball angle: -135.0
+============================================================
+[22:11:17] Script executions: 22
+----------------------------------------
+[22:11:17] Ball: direction=right/forwards | move=True   
+[22:11:17] Ballinfo u: u= 3174   | u_add= 68     | u_old= 3106  
+[22:11:17] Ballinfo v: v=-348    | v_add= 161    | v_old=-509   
+[22:11:17] Ballinfos: angle=-6.25696489916 | rating=0.973620655872
+----------------------------------------
+[22:11:17] Global noise: 1.245 ( ~124% of real values )
+[22:11:17] Ballinfo noisy u:  4477   | u_diff= 1303   | 141% from real u
+[22:11:17] Ballinfo noisy v: -403    | v_diff=-55     | 116% from real v
+[22:11:17] Ballinfo noisy angle: -5      | angle_diff= 1      | 82% from real angle
+----------------------------------------
+[22:11:17] Filtered Ball u: 3561.1738352
+[22:11:17] Filtered Ball v: -627.7860332
+[22:11:17] Filtered Ball angle: -135.0
+============================================================
+[22:11:18] Script executions: 23
+----------------------------------------
+[22:11:18] Ball: direction=right/forwards | move=True   
+[22:11:18] Ballinfo u: u= 3264   | u_add= 90     | u_old= 3174  
+[22:11:18] Ballinfo v: v=-295    | v_add= 53     | v_old=-348   
+[22:11:18] Ballinfos: angle=-5.16435570928 | rating=8.97592564861
+----------------------------------------
+[22:11:18] Global noise: 1.085 ( ~108% of real values )
+[22:11:18] Ballinfo noisy u:  4012   | u_diff= 748    | 122% from real u
+[22:11:18] Ballinfo noisy v: -325    | v_diff=-30     | 110% from real v
+[22:11:18] Ballinfo noisy angle: -4      | angle_diff= 0      | 89% from real angle
+----------------------------------------
+[22:11:18] Filtered Ball u: 3916.7195612
+[22:11:18] Filtered Ball v: -560.7931692
+[22:11:18] Filtered Ball angle: -135.0
+============================================================
+[22:11:19] Script executions: 24
+----------------------------------------
+[22:11:19] Ball: direction=right/forwards | move=True   
+[22:11:19] Ballinfo u: u= 3395   | u_add= 131    | u_old= 3264  
+[22:11:19] Ballinfo v: v=-194    | v_add= 101    | v_old=-295   
+[22:11:19] Ballinfos: angle=-3.27048792318 | rating=20.2876008878
+----------------------------------------
+[22:11:19] Global noise: 0.86 ( ~86% of real values )
+[22:11:19] Ballinfo noisy u:  2916   | u_diff=-478    | 85% from real u
+[22:11:19] Ballinfo noisy v: -189    | v_diff= 4      | 97% from real v
+[22:11:19] Ballinfo noisy angle: -3      | angle_diff= 0      | 113% from real angle
+----------------------------------------
+[22:11:19] Filtered Ball u: 3627.781046
+[22:11:19] Filtered Ball v: -398.1748396
+[22:11:19] Filtered Ball angle: -135.0
+============================================================
+[22:11:20] Script executions: 25
+----------------------------------------
+[22:11:20] Ball: direction=right/forwards | move=True   
+[22:11:20] Ballinfo u: u= 3548   | u_add= 153    | u_old= 3395  
+[22:11:20] Ballinfo v: v=-164    | v_add= 30     | v_old=-194   
+[22:11:20] Ballinfos: angle=-2.64651190969 | rating=19.2429510427
+----------------------------------------
+[22:11:20] Global noise: 0.977 ( ~97% of real values )
+[22:11:20] Ballinfo noisy u:  3684   | u_diff= 136    | 103% from real u
+[22:11:20] Ballinfo noisy v: -182    | v_diff=-18     | 111% from real v
+[22:11:20] Ballinfo noisy angle: -2      | angle_diff= 0      | 107% from real angle
+----------------------------------------
+[22:11:20] Filtered Ball u: 3798.86131
+[22:11:20] Filtered Ball v: -320.0312604
+[22:11:20] Filtered Ball angle: -135.0
+============================================================
+[22:11:21] Script executions: 26
+----------------------------------------
+[22:11:21] Ball: direction=right/forwards | move=True   
+[22:11:21] Ballinfo u: u= 3675   | u_add= 127    | u_old= 3548  
+[22:11:21] Ballinfo v: v=-65     | v_add= 99     | v_old=-164   
+[22:11:21] Ballinfos: angle=-1.01328908521 | rating=21.657379546
+----------------------------------------
+[22:11:21] Global noise: 1.289 ( ~128% of real values )
+[22:11:21] Ballinfo noisy u:  4708   | u_diff= 1033   | 128% from real u
+[22:11:21] Ballinfo noisy v: -80     | v_diff=-15     | 124% from real v
+[22:11:21] Ballinfo noisy angle:  0      | angle_diff= 0      | 97% from real angle
+----------------------------------------
+[22:11:21] Filtered Ball u: 3959.9720216
+[22:11:21] Filtered Ball v: -236.51886
+[22:11:21] Filtered Ball angle: -135.0
+============================================================
+[22:11:22] Script executions: 27
+----------------------------------------
+[22:11:22] Ball: direction=right/forwards | move=True   
+[22:11:22] Ballinfo u: u= 3822   | u_add= 147    | u_old= 3675  
+[22:11:22] Ballinfo v: v=-62     | v_add= 3      | v_old=-65    
+[22:11:22] Ballinfos: angle=-0.929363364913 | rating=31.3350034126
+----------------------------------------
+[22:11:22] Global noise: 1.318 ( ~131% of real values )
+[22:11:22] Ballinfo noisy u:  5158   | u_diff= 1336   | 134% from real u
+[22:11:22] Ballinfo noisy v: -72     | v_diff=-10     | 117% from real v
+[22:11:22] Ballinfo noisy angle:  0      | angle_diff= 0      | 87% from real angle
+----------------------------------------
+[22:11:22] Filtered Ball u: 4096.1913644
+[22:11:22] Filtered Ball v: -170.3373304
+[22:11:22] Filtered Ball angle: -135.0
+============================================================
+[22:11:23] Script executions: 28
+----------------------------------------
+[22:11:23] Ball: direction=right/forwards | move=True   
+[22:11:23] Ballinfo u: u= 3914   | u_add= 92     | u_old= 3822  
+[22:11:23] Ballinfo v: v=-5      | v_add= 57     | v_old=-62    
+[22:11:23] Ballinfos: angle=-0.0731933422915 | rating=8.36305183505
+----------------------------------------
+[22:11:23] Global noise: 0.699 ( ~69% of real values )
+[22:11:23] Ballinfo noisy u:  2672   | u_diff=-1241   | 68% from real u
+[22:11:23] Ballinfo noisy v: -3      | v_diff= 1      | 71% from real v
+[22:11:23] Ballinfo noisy angle:  0      | angle_diff= 0      | 104% from real angle
+----------------------------------------
+[22:11:23] Filtered Ball u: 3828.2931848
+[22:11:23] Filtered Ball v: -105.8809434
+[22:11:23] Filtered Ball angle: -135.0
+============================================================
+[22:11:25] Script executions: 29
+----------------------------------------
+[22:11:25] Ball: direction=right/forwards | move=True   
+[22:11:25] Ballinfo u: u= 3938   | u_add= 24     | u_old= 3914  
+[22:11:25] Ballinfo v: v= 189    | v_add= 194    | v_old=-5     
+[22:11:25] Ballinfos: angle=2.74773979555 | rating=8.35456923574
+----------------------------------------
+[22:11:25] Global noise: 1.322 ( ~132% of real values )
+[22:11:25] Ballinfo noisy u:  5263   | u_diff= 1325   | 133% from real u
+[22:11:25] Ballinfo noisy v:  240    | v_diff= 51     | 127% from real v
+[22:11:25] Ballinfo noisy angle:  2      | angle_diff= 0      | 95% from real angle
+----------------------------------------
+[22:11:25] Filtered Ball u: 4297.597604
+[22:11:25] Filtered Ball v: -19.9355842
+[22:11:25] Filtered Ball angle: -135.0
+============================================================
+[22:11:26] Script executions: 30
+----------------------------------------
+[22:11:26] Ball: direction=right/forwards | move=True   
+[22:11:26] Ballinfo u: u= 4087   | u_add= 149    | u_old= 3938  
+[22:11:26] Ballinfo v: v= 292    | v_add= 103    | v_old= 189   
+[22:11:26] Ballinfos: angle=4.08661305505 | rating=26.005934226
+----------------------------------------
+[22:11:26] Global noise: 1.117 ( ~111% of real values )
+[22:11:26] Ballinfo noisy u:  5071   | u_diff= 984    | 124% from real u
+[22:11:26] Ballinfo noisy v:  352    | v_diff= 60     | 120% from real v
+[22:11:26] Ballinfo noisy angle:  3      | angle_diff= 0      | 97% from real angle
+----------------------------------------
+[22:11:26] Filtered Ball u: 4575.0245882
+[22:11:26] Filtered Ball v: 87.1130566
+[22:11:26] Filtered Ball angle: 45.0
+============================================================
+[22:11:27] Script executions: 31
+----------------------------------------
+[22:11:27] Ball: direction=right/forwards | move=True   
+[22:11:27] Ballinfo u: u= 4168   | u_add= 81     | u_old= 4087  
+[22:11:27] Ballinfo v: v= 399    | v_add= 107    | v_old= 292   
+[22:11:27] Ballinfos: angle=5.46822549753 | rating=10.4024771656
+----------------------------------------
+[22:11:27] Global noise: 0.921 ( ~92% of real values )
+[22:11:27] Ballinfo noisy u:  4003   | u_diff=-164    | 96% from real u
+[22:11:27] Ballinfo noisy v:  348    | v_diff=-50     | 87% from real v
+[22:11:27] Ballinfo noisy angle:  4      | angle_diff= 0      | 90% from real angle
+----------------------------------------
+[22:11:27] Filtered Ball u: 4434.052739
+[22:11:27] Filtered Ball v: 172.974337
+[22:11:27] Filtered Ball angle: 45.0
+============================================================
+[22:11:28] Script executions: 32
+----------------------------------------
+[22:11:28] Ball: direction=right/forwards | move=True   
+[22:11:28] Ballinfo u: u= 4271   | u_add= 103    | u_old= 4168  
+[22:11:28] Ballinfo v: v= 548    | v_add= 149    | v_old= 399   
+[22:11:28] Ballinfos: angle=7.31151249534 | rating=14.955138359
+----------------------------------------
+[22:11:28] Global noise: 0.836 ( ~83% of real values )
+[22:11:28] Ballinfo noisy u:  3388   | u_diff=-882    | 79% from real u
+[22:11:28] Ballinfo noisy v:  469    | v_diff=-78     | 85% from real v
+[22:11:28] Ballinfo noisy angle:  7      | angle_diff= 0      | 107% from real angle
+----------------------------------------
+[22:11:28] Filtered Ball u: 4080.085567
+[22:11:28] Filtered Ball v: 281.3770858
+[22:11:28] Filtered Ball angle: 45.0
+============================================================
+[22:11:29] Script executions: 33
+----------------------------------------
+[22:11:29] Ball: direction=right/forwards | move=True   
+[22:11:29] Ballinfo u: u= 4422   | u_add= 151    | u_old= 4271  
+[22:11:29] Ballinfo v: v= 629    | v_add= 81     | v_old= 548   
+[22:11:29] Ballinfos: angle=8.0956338211 | rating=19.2865386717
+----------------------------------------
+[22:11:29] Global noise: 0.774 ( ~77% of real values )
+[22:11:29] Ballinfo noisy u:  3316   | u_diff=-1105   | 75% from real u
+[22:11:29] Ballinfo noisy v:  458    | v_diff=-170    | 72% from real v
+[22:11:29] Ballinfo noisy angle:  7      | angle_diff= 0      | 97% from real angle
+----------------------------------------
+[22:11:29] Filtered Ball u: 4208.798749
+[22:11:29] Filtered Ball v: 373.712386
+[22:11:29] Filtered Ball angle: 45.0
