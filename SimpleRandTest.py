@@ -3,10 +3,11 @@ Created on 23.08.2014
 
 @author: daniel
 '''
+
 import random
 
 
-
+testing = False
 
 for i in range (1, 11):
     
