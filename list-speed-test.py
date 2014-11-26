@@ -1,34 +1,34 @@
 import speedtest 
+import numpy
 
-
-size = 10000
-A = []
-for i in range(0,size):
-   A.append(i)
-B = list(A)
-
+a = numpy.arange(100000)
 
 speed = speedtest.Speedtest()
 
 speed.record("start")
 
-C = []
-D = []
-for aitem in A:
-   C.append(aitem+1)
-   for bitem in B:
-      D.append(bitem+1)
+for i in xrange(0,100000):
+    len(a)
+print(len(a))
 
-speed.record("for rdy")
+speed.record("bla1")
 
-C = [
-      item+1 for item in A
-   ]
+for i in xrange(0,100000):
+    a.shape[0]
+print(a.shape[0])
 
-D = [
-      bitem+1 for bitem in B for aitem in A
-   ]
+speed.record("bla2")
 
-speed.record("list rdy")
+for i in xrange(0,100000):
+    a.shape[0]
+print(a.shape[0])
+
+speed.record("bla3")
+
+for i in xrange(0,100000):
+    len(a)
+print(len(a))
+
+speed.record("bla3")
 
 speed.printRecords()
