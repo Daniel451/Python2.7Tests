@@ -137,7 +137,7 @@ class dbscan():
             else:
                 # found new cluster
                 self.clusterCount += 1
-#                self.__expandCluster(i, neighborPoints)
+                self.__expandCluster(i, neighborPoints)
 
         # get filteredKeys from datamap
         filteredKeys = np.where( self.datamap != 3 )
@@ -172,7 +172,7 @@ class dbscan():
                 
                 if len(curNeighbors) >= self.minPoints:
                     newCluster.append(pointIndex)
-                    self.datamap[pointIndex] = 3 
+                    self.datamap[pointIndex] = 1 
 
                 elif len(curNeighbors) > 0:
                     self.datamap[pointIndex] = 2
