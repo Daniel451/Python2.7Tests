@@ -11,6 +11,7 @@ import random
 
 class RandomTest():
     
+    # fields
     container = dict()
     count_execs = 0
 
@@ -20,7 +21,7 @@ class RandomTest():
             self.container[i] = 0
 
     def doCalculate(self):
-    
+
         self.count_execs += 1
         self.container[random.randint(1, 100)] += 1
     
@@ -47,5 +48,5 @@ Rubby = RandomTest()
 
 loopcounter = 0
 while loopcounter < 1000000:
-    Rubby.doCalculate()
+Rubby.doCalculate()
 #     time.sleep(0.01)

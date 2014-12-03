@@ -9,6 +9,16 @@ import numpy as np
 
 class dbscan():
 
+    
+    data = None
+    dataCount = None
+    filtered = None
+    clusterCount = None
+    minPoints = None
+    epsilon = None
+    datamap = None
+
+
     def __init__(self, datax, datay, minPoints, epsilon):
         """
             Creates a dbscan object to filter given datasets

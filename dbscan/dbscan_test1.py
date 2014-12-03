@@ -17,7 +17,7 @@ noisey = np.random.uniform(-50.0, 50.0, size)
 datax = originalx + noisex
 datay = originaly + noisey
 
-minPoints = 2
+minPoints = 3
 epsilon = 10.0
 
 dbs = dbscan(datax, datay, minPoints, epsilon)

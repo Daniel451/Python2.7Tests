@@ -7,27 +7,25 @@ speed = speedtest.Speedtest()
 
 speed.record("start")
 
-for i in xrange(0,100000):
+loops = 10000000
+
+for i in range(0, loops):
     len(a)
-print(len(a))
 
 speed.record("bla1")
 
-for i in xrange(0,100000):
+for i in range(0, loops):
     a.shape[0]
-print(a.shape[0])
 
 speed.record("bla2")
 
-for i in xrange(0,100000):
+for i in xrange(0, loops):
     a.shape[0]
-print(a.shape[0])
 
 speed.record("bla3")
 
-for i in xrange(0,100000):
+for i in xrange(0, loops):
     len(a)
-print(len(a))
 
 speed.record("bla3")
 
