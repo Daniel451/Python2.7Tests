@@ -3,6 +3,7 @@
 
 from matplotlib.pylab import *
 from collections import deque
+import random
 import numpy as np
 
 
@@ -115,13 +116,13 @@ class dbscan():
     
 
     def filter(self):
-       
+
         # iterate over every dataset
         for i in xrange(0, self.dataCount):
 
             # if point is already visited: skip execution
             if self.datamap[i] != 0:
-                return
+                continue
 
             # indexes of neighborhood points
             neighborPoints = self.__regionQuery(i)
@@ -136,12 +137,12 @@ class dbscan():
             else:
                 # found new cluster
                 self.clusterCount += 1
-                self.__expandCluster(i, neighborPoints)
+#                self.__expandCluster(i, neighborPoints)
 
         # get filteredKeys from datamap
         filteredKeys = np.where( self.datamap != 3 )
         filteredKeys = filteredKeys[0]
-
+        
         # initialize filteredData with zeros
         self.filteredData = np.zeros((2,filteredKeys.shape[0]))
 
@@ -174,8 +175,9 @@ class dbscan():
                     self.datamap[pointIndex] = 3 
 
                 elif len(curNeighbors) > 0:
-                    newCluster.append(pointIndex)
                     self.datamap[pointIndex] = 2
+
+        self.clusters.append(newCluster)
 
 
 
@@ -199,6 +201,9 @@ class dbscan():
 
     def plot(self):
 
+        colors = ["b", "r", "g", "c", "m", "y", "k"]
+        markers = ["+", "o", "x", "s", "h"]
+
         plt.subplot(2,2,1)
         plt.title("unfiltered")
         plt.plot(self.data[0], self.data[1], color="r", marker="o")
@@ -215,7 +220,9 @@ class dbscan():
         plt.subplot(2,2,4)
         plt.title("clusters")
         for cluster in self.clusters:
-            plt.plot(5, 5, color="b", marker="o")
+            xdata = [ self.data[0][x] for x in cluster ]
+            ydata = [ self.data[1][y] for y in cluster ]
+            plt.plot(xdata, ydata, color=random.choice(colors), marker=random.choice(markers))
 
         plt.show()
 
