@@ -2,6 +2,7 @@
 
 
 from matplotlib.pylab import *
+from collections import deque
 import numpy as np
 
 
@@ -10,13 +11,21 @@ import numpy as np
 class dbscan():
 
     
+
+    # fields
     data = None
     dataCount = None
-    filtered = None
+
+    clusters = None
     clusterCount = None
+
+    filteredData = None
+
     minPoints = None
     epsilon = None
+
     datamap = None
+
 
 
     def __init__(self, datax, datay, minPoints, epsilon):
@@ -69,42 +78,56 @@ class dbscan():
         # each column represents one dataset of x,y-values
         self.data = np.array([datax,datay])
 
-        # amount of datasets
+        # amount of datasets (input)
         self.dataCount = self.data.shape[1]
 
         # initialize filtered data
-        self.filtered = False
+        self.filteredData = False
 
         # initialize amount of clusters
         self.clusterCount = 0
 
-        # initialize minPoints
+        # initialize clusters
+        # contains all found clusters
+        self.clusters = deque()
+
+        # initialize minPoints (to build a cluster)
         self.minPoints = minPoints
 
-        # initialize epsilon
+        # initialize epsilon (maximum range for neighbors)
         self.epsilon = epsilon
 
         # initialize a datamap for each point
+        # each value represents the following:
         # 0: point is not visited (not calculated yet)
         # 1: point is core point
         # 2: point is density-reachable
         # 3: point is noise
+        #
+        # e.g. 'datamap[2][5] = 1' means
+        # the point 'data[2][5]' is a core point of a cluster
+        #
         self.datamap = np.zeros(self.data.shape[1])
 
         # filter data 
         self.filter()
 
     
+
     def filter(self):
        
         # iterate over every dataset
         for i in xrange(0, self.dataCount):
-           
+
+            # if point is already visited: skip execution
+            if self.datamap[i] != 0:
+                return
+
             # indexes of neighborhood points
             neighborPoints = self.__regionQuery(i)
 
             # number of neighborhood points
-            neighborCount = neighborPoints.shape[0]
+            neighborCount = len(neighborPoints)
 
 
             if neighborCount < self.minPoints:
@@ -113,20 +136,47 @@ class dbscan():
             else:
                 # found new cluster
                 self.clusterCount += 1
-                self.__expandCluster()
+                self.__expandCluster(i, neighborPoints)
 
+        # get filteredKeys from datamap
         filteredKeys = np.where( self.datamap != 3 )
         filteredKeys = filteredKeys[0]
 
-        self.filtered = np.zeros((2,filteredKeys.shape[0]))
+        # initialize filteredData with zeros
+        self.filteredData = np.zeros((2,filteredKeys.shape[0]))
 
+        # set filteredData
         for i in xrange(0, len(filteredKeys)):
-            self.filtered[0][i] = self.data[0][filteredKeys[i]]
-            self.filtered[1][i] = self.data[1][filteredKeys[i]]
+            self.filteredData[0][i] = self.data[0][filteredKeys[i]] # x values
+            self.filteredData[1][i] = self.data[1][filteredKeys[i]] # y values
 
 
-    def __expandCluster(self):
-        return
+
+    def __expandCluster(self, i, neighborPoints):
+
+        # initialize a new cluster
+        newCluster = deque()
+        
+        # append current point index
+        newCluster.append(i)
+
+        # todo: comment
+        for pointIndex in neighborPoints:
+            
+            # if point is not visited
+            if self.datamap[pointIndex] == 0:
+                
+                # current neighbors of current loop point
+                curNeighbors = self.__regionQuery(pointIndex)
+                
+                if len(curNeighbors) >= self.minPoints:
+                    newCluster.append(pointIndex)
+                    self.datamap[pointIndex] = 3 
+
+                elif len(curNeighbors) > 0:
+                    newCluster.append(pointIndex)
+                    self.datamap[pointIndex] = 2
+
 
 
     def __regionQuery(self, i):
@@ -146,6 +196,7 @@ class dbscan():
         return points[0]
 
     
+
     def plot(self):
 
         plt.subplot(2,2,1)
@@ -154,13 +205,17 @@ class dbscan():
 
         plt.subplot(2,2,2)
         plt.title("filtered")
-        plt.plot(self.filtered[0], self.filtered[1], color="b", marker="x")
+        plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="x")
 
         plt.subplot(2,2,3)
         plt.title("combined")
         plt.plot(self.data[0], self.data[1], color="r", marker="o")
-        plt.plot(self.filtered[0], self.filtered[1], color="b", marker="x")
+        plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="x")
 
+        plt.subplot(2,2,4)
+        plt.title("clusters")
+        for cluster in self.clusters:
+            plt.plot(5, 5, color="b", marker="o")
 
         plt.show()
 
