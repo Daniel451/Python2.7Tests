@@ -159,13 +159,24 @@ class dbscan():
         newCluster = deque()
         
         # container / iterator
-        contNeighborPoints = list(neighborPoints)    
+        contNeighborPoints = deque(neighborPoints)    
 
-        for pointIndex in contNeighborPoints:
-            
+        # set / container to remember, if point is already processed
+        setVisited = dict()
+
+        while len(contNeighborPoints) > 1:
+        #for pointIndex in contNeighborPoints:
+        
+            pointIndex = contNeighborPoints.popleft()
+
             # if point is not visited
-            if self.datamap[pointIndex] == 0 or self.datamap[pointIndex] == 3:
-                
+            if (
+                (self.datamap[pointIndex] == 0 or self.datamap[pointIndex] == 3)
+                and (not setVisited.has_key(pointIndex))
+                ):
+
+                setVisited[pointIndex] = pointIndex
+
                 # current neighbors of current loop point
                 curNeighbors = self.__regionQuery(pointIndex)
 
