@@ -158,18 +158,20 @@ class dbscan():
         # initialize a new cluster
         newCluster = deque()
         
-        # append current point index
-        newCluster.append(i)
+        # container / iterator
+        contNeighborPoints = list(neighborPoints)    
 
-        # todo: comment
-        for pointIndex in neighborPoints:
+        for pointIndex in contNeighborPoints:
             
             # if point is not visited
-            if self.datamap[pointIndex] == 0:
+            if self.datamap[pointIndex] == 0 or self.datamap[pointIndex] == 3:
                 
                 # current neighbors of current loop point
                 curNeighbors = self.__regionQuery(pointIndex)
-                
+
+                # append new neighborhood to iterator
+                [ contNeighborPoints.append(elem) for elem in curNeighbors ]           
+
                 if len(curNeighbors) >= self.minPoints:
                     newCluster.append(pointIndex)
                     self.datamap[pointIndex] = 1 
@@ -182,47 +184,117 @@ class dbscan():
 
 
     def __regionQuery(self, i):
-        
+
+        regionIndexes = deque()
+
+        npiter = np.nditer( [self.data[0], self.data[1]], flags=["c_index"] )
+
+        for x,y in npiter:
+            
+            if np.sqrt( (x - self.data[0][i])**2 + (y - self.data[1][i])**2  ) < self.epsilon:
+                regionIndexes.append(npiter.index)
+
+        points = np.array(regionIndexes)                
+
+
+
+
+
         # this returns a tuple containing 1D-Arrays of indexes which match our conditions
-        points = np.where( 
-                (self.data[0] > self.data[0][i] - self.epsilon)
-                &
-                (self.data[0] < self.data[0][i] + self.epsilon)
-                &
-                (self.data[1] > self.data[1][i] - self.epsilon)
-                &
-                (self.data[1] < self.data[1][i] + self.epsilon)
-                )
+        #points = np.where(
+                    #np.sqrt(
+                        #( self.data[0] - self.data[0][i] )**2
+                        #+
+                        #( self.data[1] - self.data[0][i] )**2
+                    #)
+                    #<
+                    #self.epsilon
+                #)
+        #points = np.where( 
+                #(self.data[0] > self.data[0][i] - self.epsilon)
+                #&
+                #(self.data[0] < self.data[0][i] + self.epsilon)
+                #&
+                #(self.data[1] > self.data[1][i] - self.epsilon)
+                #&
+                #(self.data[1] < self.data[1][i] + self.epsilon)
+                #)
 
         # this returns our array (tuple is not necessary)
-        return points[0]
+        return points
 
     
 
     def plot(self):
 
+
+        # unfiltered
         colors = ["b", "r", "g", "c", "m", "y", "k"]
         markers = ["+", "o", "x", "s", "h"]
-
         plt.subplot(2,2,1)
         plt.title("unfiltered")
-        plt.plot(self.data[0], self.data[1], color="r", marker="o")
+        plt.ylim([-160,160])
+        plt.xlim([-160,160])
+        plt.plot(self.data[0], self.data[1], color="r", marker="o", linestyle="None")
+        plt.text(-150, 130, "data pts: " + str(self.dataCount) )
 
+
+        # filtered
         plt.subplot(2,2,2)
         plt.title("filtered")
-        plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="x")
+        plt.ylim([-160,160])
+        plt.xlim([-160,160])
+        plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="o", linestyle="None")
+        plt.text(-150, 130, "data pts: " + str(len(self.filteredData[0])) )
 
+
+        # combined
         plt.subplot(2,2,3)
         plt.title("combined")
-        plt.plot(self.data[0], self.data[1], color="r", marker="o")
-        plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="x")
+        plt.ylim([-160,160])
+        plt.xlim([-160,160])
+        plt.plot(
+                map( lambda key: self.data[0][key], np.where(self.datamap == 3)[-1] ),
+                map( lambda key: self.data[1][key], np.where(self.datamap == 3)[-1] ),
+                color="r", marker="o", linestyle="None"
+                )
+        plt.plot(
+                map( lambda key: self.data[0][key], np.where(self.datamap == 2)[-1] ),
+                map( lambda key: self.data[1][key], np.where(self.datamap == 2)[-1] ),
+                color="m", marker="o", linestyle="None"
+                )
+        plt.plot(
+                map( lambda key: self.data[0][key], np.where(self.datamap == 1)[-1] ),
+                map( lambda key: self.data[1][key], np.where(self.datamap == 1)[-1] ),
+                color="b", marker="o", linestyle="None"
+                )
+        plt.text(-150, 130, "minPoints: " + str(self.minPoints))
+        plt.text(-150, 110, "epsilon  : " + str(self.epsilon))
 
+        # cluster
         plt.subplot(2,2,4)
         plt.title("clusters")
-        for cluster in self.clusters:
-            xdata = [ self.data[0][x] for x in cluster ]
-            ydata = [ self.data[1][y] for y in cluster ]
-            plt.plot(xdata, ydata, color=random.choice(colors), marker=random.choice(markers))
+        plt.ylim([-160,160])
+        plt.xlim([-160,160])
+
+        for key,cluster in enumerate(self.clusters):
+
+            xdata = np.take(self.data[0], cluster)
+            ydata = np.take(self.data[1], cluster)
+
+            plt.plot(xdata, ydata, color="b", marker="s", label="o", linestyle="None")
+
+            for x,y in zip(xdata, ydata):
+                plt.text(x+5, y-7, str(key), color="black", fontsize=9 )
+    
+        densityXdata = np.take(self.data[0], np.where(self.datamap == 2)[-1])
+        densityYdata = np.take(self.data[1], np.where(self.datamap == 2)[-1])
+
+        plt.plot(densityXdata, densityYdata, color="m", marker="o", linestyle="None")
+
+        plt.text(-150, 130, "cluster: " + str(self.clusterCount) )
+        plt.text(-150, 110, "core pts: " + str(len(np.where(self.datamap == 1)[0])) )
+        plt.text(-150,  90, "dens pts: " + str(len(np.where(self.datamap == 2)[0])) )
 
         plt.show()
 
