@@ -225,7 +225,7 @@ class dbscan():
 
     
 
-    def plot(self):
+    def plot(self, xmin=-150, xmax=150, ymin=-150, ymax=150):
 
 
         # unfiltered
@@ -233,26 +233,26 @@ class dbscan():
         markers = ["+", "o", "x", "s", "h"]
         plt.subplot(2,2,1)
         plt.title("unfiltered")
-        plt.ylim([-160,160])
-        plt.xlim([-160,160])
+        plt.ylim([ymin, ymax])
+        plt.xlim([xmin, xmax])
         plt.plot(self.data[0], self.data[1], color="r", marker="o", linestyle="None")
-        plt.text(-150, 130, "data pts: " + str(self.dataCount) )
+        plt.text(xmin+10, ymax-20, "data pts: " + str(self.dataCount) )
 
 
         # filtered
         plt.subplot(2,2,2)
         plt.title("filtered")
-        plt.ylim([-160,160])
-        plt.xlim([-160,160])
+        plt.ylim([ymin, ymax])
+        plt.xlim([xmin, xmax])
         plt.plot(self.filteredData[0], self.filteredData[1], color="b", marker="o", linestyle="None")
-        plt.text(-150, 130, "data pts: " + str(len(self.filteredData[0])) )
+        plt.text(xmin+10, ymax-20, "data pts: " + str(len(self.filteredData[0])) )
 
 
         # combined
         plt.subplot(2,2,3)
         plt.title("combined")
-        plt.ylim([-160,160])
-        plt.xlim([-160,160])
+        plt.ylim([ymin, ymax])
+        plt.xlim([xmin, xmax])
         plt.plot(
                 map( lambda key: self.data[0][key], np.where(self.datamap == 3)[-1] ),
                 map( lambda key: self.data[1][key], np.where(self.datamap == 3)[-1] ),
@@ -268,14 +268,14 @@ class dbscan():
                 map( lambda key: self.data[1][key], np.where(self.datamap == 1)[-1] ),
                 color="b", marker="o", linestyle="None"
                 )
-        plt.text(-150, 130, "minPoints: " + str(self.minPoints))
-        plt.text(-150, 110, "epsilon  : " + str(self.epsilon))
+        plt.text(xmin+10, ymax-20, "minPoints: " + str(self.minPoints))
+        plt.text(xmin+10, ymax-40, "epsilon  : " + str(self.epsilon))
 
         # cluster
         plt.subplot(2,2,4)
         plt.title("clusters")
-        plt.ylim([-160,160])
-        plt.xlim([-160,160])
+        plt.ylim([ymin, ymax])
+        plt.xlim([xmin, xmax])
 
         for key,cluster in enumerate(self.clusters):
 
@@ -292,9 +292,9 @@ class dbscan():
 
         plt.plot(densityXdata, densityYdata, color="m", marker="o", linestyle="None")
 
-        plt.text(-150, 130, "cluster: " + str(self.clusterCount) )
-        plt.text(-150, 110, "core pts: " + str(len(np.where(self.datamap == 1)[0])) )
-        plt.text(-150,  90, "dens pts: " + str(len(np.where(self.datamap == 2)[0])) )
+        plt.text(xmin+10, ymax-20, "cluster: " + str(self.clusterCount) )
+        plt.text(xmin+10, ymax-40, "core pts: " + str(len(np.where(self.datamap == 1)[0])) )
+        plt.text(xmin+10, ymax-60, "dens pts: " + str(len(np.where(self.datamap == 2)[0])) )
 
         plt.show()
 
