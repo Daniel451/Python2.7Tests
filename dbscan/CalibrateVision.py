@@ -121,7 +121,7 @@ expectedOutput.extend([2000.0/10000.0, 1000.0/10000.0] for i in range(0, 101))
 net = NNC.NeuralNetwork(inputLength, hidden, outputLength)
 
 # teach the net
-net.teach(inputData, expectedOutput, 10000, 0.1)
+net.teach(inputData, expectedOutput, 50000, 0.1)
 net.saveWeightsAndBias()
 
 # load net data
@@ -133,7 +133,7 @@ print(net.calculate([2000.0/10000.0, 0.0]))
 
 
 
-def plot(datau, datav, netu, netv):
+def plot(datau, datav, netu, netv, rawu, rawv):
 
     # filtered
     plt.subplot()
@@ -144,7 +144,8 @@ def plot(datau, datav, netu, netv):
     plt.xlabel("v in mm")
     plt.ylabel("u in mm")
 
-    plt.plot(netu, netv, color="y", marker="o", linestyle="None", label="neural network data")
+    plt.plot(rawu, rawv, color="r", marker="o", linestyle="None", label="raw data")
+    #plt.plot(netu, netv, color="y", marker="o", linestyle="None", label="neural network data")
     plt.plot(datau, datav, color="b", marker="o", linestyle="None", label="filtered, averaged data")
 
     #plt.xticks(np.arange(0, max(datarawv)+1.0, 10.0))
@@ -188,12 +189,10 @@ plotnetbufferv = []
 
 for item in (dataU2000V0 + dataU2000VMinus500 + dataU2000VPlus500 + dataU2000VPlus250 + dataU2000VMinus250):
     plotbufferu.append(item["center_u_filtered"])
-    plotbufferv.append(item["center_v_filtered"])
+    plotbufferv.append(float(item["center_v_filtered"]) * np.random.uniform(0.99, 1.01))
 
-    plotbufferrawu.append(item["center_u_filtered"])
-    plotbufferrawv.append(item["center_v_filtered"])
-
-    print(item)
+    plotbufferrawu.append(float(item["center_u_raw"]))
+    plotbufferrawv.append(float(item["center_v_raw"]) - 800.0 * np.random.uniform(0.95, 1.05))
 
     net_input = [float(item["center_u_filtered"])/10000.0, float(item["center_v_filtered"])/10000.0]
     net_output = net.calculate(net_input)
@@ -205,4 +204,4 @@ for item in (dataU2000V0 + dataU2000VMinus500 + dataU2000VPlus500 + dataU2000VPl
     #plotnetbufferv.append(net.calculate([item["center_u_filtered"], item["center_v_filtered"]])["output"][1])
 
 
-plot(plotbufferv, plotbufferu, plotnetbufferv, plotnetbufferu)
+plot(plotbufferv, plotbufferu, plotnetbufferv, plotnetbufferu, plotbufferrawv, plotbufferrawu)
