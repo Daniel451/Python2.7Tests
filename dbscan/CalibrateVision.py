@@ -144,12 +144,12 @@ def plot(datau, datav, netu, netv, rawu, rawv):
     plt.xlabel("v in mm")
     plt.ylabel("u in mm")
 
-    plt.plot(rawu, rawv, color="r", marker="o", linestyle="None", label="raw data")
-    #plt.plot(netu, netv, color="y", marker="o", linestyle="None", label="neural network data")
-    plt.plot(datau, datav, color="b", marker="o", linestyle="None", label="filtered, averaged data")
+    #plt.plot(rawu, rawv, color="r", marker="o", linestyle="None", label="raw data")
+    plt.plot(netu, netv, color="y", marker="o", linestyle="None", label="neural network data")
+    #plt.plot(datau, datav, color="b", marker="o", linestyle="None", label="filtered, averaged data")
 
-    #plt.xticks(np.arange(0, max(datarawv)+1.0, 10.0))
-    #plt.yticks(np.arange(0, max(datarawu)+1.0, 10.0))
+    plt.xticks(np.arange(-100, 100, 1.0))
+    plt.yticks(np.arange(1900, 2100, 1.0))
 
     plt.legend(loc="upper right")
 
@@ -160,8 +160,8 @@ def plot(datau, datav, netu, netv, rawu, rawv):
 
 dataU2000VPlus250 = [{"center_u_filtered": float(item["center_u_filtered"]),
     "center_v_filtered": float(item["center_v_filtered"])/1.5,
-    "center_u_raw": float(item["center_u_raw"]),
-    "center_v_raw": float(item["center_v_raw"])/1.5} for item in dataU2000VPlus500]
+    "center_u_raw": float(item["center_u_raw"]) * np.random.uniform(0.9, 1.1),
+    "center_v_raw": float(item["center_v_raw"])/1.5 * np.random.uniform(0.9, 1.1)} for item in dataU2000VPlus500]
 
 dataU2000VMinus250 = [{"center_u_filtered": float(item["center_u_filtered"]),
     "center_v_filtered": float(item["center_v_filtered"])/1.5,
@@ -187,7 +187,7 @@ plotbufferrawv = []
 plotnetbufferu = []
 plotnetbufferv = []
 
-for item in (dataU2000V0 + dataU2000VMinus500 + dataU2000VPlus500 + dataU2000VPlus250 + dataU2000VMinus250):
+for item in (dataU2000V0 + dataU2000VMinus500 + dataU2000VPlus500):
     plotbufferu.append(item["center_u_filtered"])
     plotbufferv.append(float(item["center_v_filtered"]) * np.random.uniform(0.99, 1.01))
 
