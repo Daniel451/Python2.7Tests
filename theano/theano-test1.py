@@ -10,5 +10,5 @@ srng = RandomStreams(seed=234)
 
 # random uniform distribution
 rnd_uniform = srng.uniform((2, 2))           # random uniform object
-get_rnd_uniform = function([], rnd_uniform)  # getter function
+get_rnd_uniform = function([], rnd_uniform)  # getter function.5.3
 
