@@ -66,7 +66,7 @@ def parallel(xs):
     high = len(xs)/num_threads
 
     for i in range(0, num_threads):
-        worker.append(multiprocessing.Process(target=closest_to_average_ascenator_worker, args=(queue, xs[0:len(xs)/4], avg)))
+        worker.append(multiprocessing.Process(target=closest_to_average_ascenator_worker, args=(queue, xs[low:high], avg)))
         worker[i].start()
         low += len(xs)/num_threads
         high += len(xs)/num_threads
