@@ -3,9 +3,15 @@ import os
 
 
 class Recorder:
-    def __init__(self, camera=0, counter=0, naming_prefix="cam_record", fdir="img/"):
+    def __init__(self, camera=0, counter=0, naming_prefix="cam_record", fdir="img/", width=800, height=600):
         # capture camera input
         self.cap = cv2.VideoCapture(camera)
+        self.cap.set(3, width)
+        self.cap.set(4, height)
+
+        # capture size
+
+        # counter and file/path settings
         self.counter = counter
         self.naming_prefix = naming_prefix
         self.fdir = fdir
