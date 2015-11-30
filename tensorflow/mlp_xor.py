@@ -17,10 +17,10 @@ if os.path.exists(tensorboard_path + tensorboard_tmp_dir):
 #####################
 
 # define input and output data
-# input_data = [[0., 0.], [0., 1.], [1., 0.], [1., 1.]]  # XOR input
-# output_data = [0., 0., 0., 1.]  # XOR output
-input_data = [[0., 0.], [0., 0.], [0., 0.], [0., 0.]]  # XOR input
-output_data = [0., 0., 0., 0.]  # XOR output
+input_data = [[0., 0.], [0., 1.], [1., 0.], [1., 1.]]  # XOR input
+output_data = [0., 1., 1., 0.]  # XOR output
+# input_data = [[0., 0.], [0., 0.], [0., 0.], [0., 0.]]  # XOR input
+# output_data = [0., 0., 0., 0.]  # XOR output
 
 # create a placeholder for the input
 # None indicates a variable batch size for the input
@@ -39,18 +39,18 @@ hidden_nodes = 5
 b_hidden = tf.Variable(0.1, name="hidden_bias")
 
 # hidden layer's weight matrix initialized with a uniform distribution
-W_hidden = tf.Variable(tf.random_uniform([hidden_nodes, 2], -1.0, 1.0), name="hidden_weights")
+W_hidden = tf.Variable(tf.random_uniform([2, hidden_nodes], -1.0, 1.0), name="hidden_weights")
 
 # calc hidden layer's activation
-hidden = tf.sigmoid(tf.matmul(W_hidden, tf.transpose(n_input)) + b_hidden)
+hidden = tf.sigmoid(tf.matmul(n_input, W_hidden) + b_hidden)
 
 
 ################
 # output layer #
 ################
 
-W_output = tf.Variable(tf.random_uniform([1, 5], -1.0, 1.0), name="output_weights")  # output layer's weight matrix
-output = tf.sigmoid(tf.matmul(W_output, hidden))  # calc output layer's activation
+W_output = tf.Variable(tf.random_uniform([5, 1], -1.0, 1.0), name="output_weights")  # output layer's weight matrix
+output = tf.sigmoid(tf.matmul(hidden, W_output))  # calc output layer's activation
 
 
 ############
