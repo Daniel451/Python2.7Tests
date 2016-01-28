@@ -3,12 +3,12 @@ import os
 import shutil
  
  
-# tensorboard_path = "/home/daniel/tensorboard_log/"
-# tensorboard_tmp_dir = "test1"
- 
-# # delete any former tensorboard log data
-# if os.path.exists(tensorboard_path + tensorboard_tmp_dir):
-#     shutil.rmtree(tensorboard_path + tensorboard_tmp_dir)
+tensorboard_path = "/home/daniel/tensorboard_log/"
+tensorboard_tmp_dir = "test1"
+
+# delete any former tensorboard log data
+if os.path.exists(tensorboard_path + tensorboard_tmp_dir):
+    shutil.rmtree(tensorboard_path + tensorboard_tmp_dir)
  
  
 #####################
@@ -18,9 +18,7 @@ import shutil
 # define input and output data
 input_data = [[0., 0.], [0., 1.], [1., 0.], [1., 1.]]  # XOR input
 output_data = [[0.], [1.], [1.], [0.]]  # XOR output
-# input_data = [[0., 0.], [0., 0.], [0., 0.], [0., 0.]]  # XOR input
-# output_data = [0., 0., 0., 0.]  # XOR output
- 
+
 # create a placeholder for the input
 # None indicates a variable batch size for the input
 # one input's dimension is [1, 2] and output's [1, 1]
@@ -56,10 +54,11 @@ output = tf.sigmoid(tf.matmul(hidden, W_output))  # calc output layer's activati
 ############
 # learning #
 ############
-cross_entropy = -(n_output * tf.log(output) + (1 - n_output) * tf.log(1 - output))
-# cross_entropy = tf.square(n_output - output)  # also works?!
+#cross_entropy = -(n_output * tf.log(output) + (1 - n_output) * tf.log(1 - output))
+#cross_entropy = tf.square(n_output - output)  # also works?!
 
-loss = tf.reduce_mean(cross_entropy)  # mean the cross_entropy
+#loss = tf.reduce_mean(cross_entropy)  # mean the cross_entropy
+loss = tf.reduce_mean(tf.nn.l2_loss(output))
 optimizer = tf.train.AdamOptimizer(0.01)  # take a gradient descent for optimizing with a "stepsize" of 0.1
 train = optimizer.minimize(loss)  # let the optimizer train
  
@@ -103,7 +102,7 @@ for epoch in xrange(0, 2001):
 
     if epoch % 200 == 0:
         print("")
-        # print("step: {:>3}".format(epoch))
+        print("step: {:>3}".format(epoch))
         print("loss: {}".format(cvalues[1]))
         # print("b_hidden: {}".format(cvalues[3]))
         # print("W_hidden: {}".format(cvalues[2]))
