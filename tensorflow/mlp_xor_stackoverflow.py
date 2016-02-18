@@ -2,7 +2,7 @@ import math
 import tensorflow as tf
 import numpy as np
 
-HIDDEN_NODES = 10
+HIDDEN_NODES = 2
 
 x = tf.placeholder(tf.float32, [None, 2])
 W_hidden = tf.Variable(tf.truncated_normal([2, HIDDEN_NODES], stddev=1./math.sqrt(2)))
@@ -30,10 +30,10 @@ sess.run(init_op)
 xTrain = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 yTrain = np.array([[1, 0], [0, 1], [0, 1], [1, 0]])
 
-for i in xrange(500):
+for i in xrange(5001):
   _, loss_val = sess.run([train_op, loss], feed_dict={x: xTrain, y_input: yTrain})
 
   if i % 10 == 0:
-    print "Step:", i, "Current loss:", loss_val
+    print "\nStep:", i, "Current loss:", loss_val
     for x_input in [[0, 0], [0, 1], [1, 0], [1, 1]]:
       print x_input, sess.run(y, feed_dict={x: [x_input]})

@@ -34,14 +34,11 @@ hidden_nodes = 2
 # hidden layer #
 ################
  
-# hidden layer's bias neuron
-b_hidden = tf.Variable(tf.random_normal([hidden_nodes]), name="hidden_bias")
- 
 # hidden layer's weight matrix initialized with a uniform distribution
 W_hidden = tf.Variable(tf.random_normal([2, hidden_nodes]), name="hidden_weights")
  
 # calc hidden layer's activation
-hidden = tf.sigmoid(tf.matmul(n_input, W_hidden) + b_hidden)
+hidden = tf.sigmoid(tf.matmul(n_input, W_hidden))
 
  
 ################
@@ -61,7 +58,7 @@ cross_entropy = tf.abs(n_output - output)  # also works?!
 
 loss = tf.reduce_mean(cross_entropy)  # mean the cross_entropy
 # loss = tf.reduce_mean(tf.nn.l2_loss(output))
-optimizer = tf.train.AdamOptimizer(0.01)  # take a gradient descent for optimizing with a "stepsize" of 0.1
+optimizer = tf.train.AdamOptimizer(0.0001)  # take a gradient descent for optimizing with a "stepsize" of 0.1
 # optimizer = tf.train.GradientDescentOptimizer(0.01)  # take a gradient descent for optimizing with a "stepsize" of 0.1
 train = optimizer.minimize(loss)  # let the optimizer train
  
@@ -95,15 +92,15 @@ sess.run(init)  # initialize all variables
 #####################
 # train the network #
 #####################
-for epoch in xrange(0, 20001):
+for epoch in xrange(0, 200001):
     # run the training operation
     # import ipdb; ipdb.set_trace()
-    cvalues = sess.run([train, loss, W_hidden, b_hidden, W_output],
+    cvalues = sess.run([train, loss, W_hidden, W_output],
                        feed_dict={n_input: input_data, n_output: output_data})
  
     # print some debug stuff
 
-    if epoch % 1000 == 0:
+    if epoch % 10000 == 0:
         print("")
         print("step: {:>3}".format(epoch))
         print("loss: {}".format(cvalues[1]))
