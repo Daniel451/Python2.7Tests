@@ -45,5 +45,5 @@ def parallel_loops(parallelism, num_entries=10, duration=10 ** 4):
     print '%d cores: done in %.2f, %.2f ops/sec' % (parallelism, elapsed_time, (num_entries * parallelism) / elapsed_time)
 
 
-for num_threads in range(1, 65, 1):
+for num_threads in range(1, 16, 1):
     parallel_loops(num_threads)
