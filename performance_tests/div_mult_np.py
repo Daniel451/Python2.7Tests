@@ -53,7 +53,7 @@ def arrdiv3(a):
     div, vectorized
     """
     b = a.copy()
-    b = (b + 5) / 0.5
+    b = (b + 5) / 2
 
 
 
