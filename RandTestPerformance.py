@@ -4,14 +4,6 @@ Created on 23.08.2014
 @author: daniel
 '''
 
-
-
-'''
-Created on 23.08.2014
-
-@author: daniel
-'''
-
 import time
 import random
 import numpy
